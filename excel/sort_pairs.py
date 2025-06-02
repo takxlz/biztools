@@ -1,7 +1,8 @@
 import pandas as pd
+from pandas import DataFrame
 
 # Excelの2列を比較して、共通の値を横に並べるプログラム
-def sort_pairs(df):
+def sort_pairs(df: DataFrame) -> DataFrame:
     # None → 空文字列に変換（扱いやすくする）
     df = df.fillna("")
 
