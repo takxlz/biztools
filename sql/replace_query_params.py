@@ -1,13 +1,15 @@
 
 def replace_sql_placeholder(sql: str, params: list) -> str:
+    """SQLのプレースホルダー（?）をパラメータで順次置き換える
+    
+    Args:
+        sql: プレースホルダーを含むSQL文
+        params: 置き換える値のリスト
+        
+    Returns:
+        パラメータが適用されたSQL文
     """
-    SQLのプレースホルダーをパラメータで置き換える関数
-
-    :param sql: SQL文（プレースホルダーを含む）
-    :param params: プレースホルダーに対応する値のリスト
-    :return: プレースホルダーが置き換えられたSQL文
-    """
-    for i, value in enumerate(params):
+    for value in params:
         sql = sql.replace("?", value, 1)
     return sql
 
